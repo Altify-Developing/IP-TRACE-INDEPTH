@@ -90,6 +90,18 @@ $.getJSON('https://api.bigdatacloud.net/data/ip-geolocation-full?key=' + apiKey2
 	document.getElementById("ipbdc").innerHTML = (result)
 });
 </script>
+<script>
+var urdate = new Date()
+urdate.getHours();
+urdate.getMinutes();
+urdate.getSeconds();
+let ruff1 = document.getElementById("cloudflareip").innerHTML;	
+let ruff2 = document.getElementById("geoip").innerHTML;
+let ruff3 = document.getElementById("ipdata").innerHTML;
+let ruff4 = document.getElementById("dbip").innerHTML;
+let ruff5 = document.getElementById("ipbdc").innerHTML;
+document.getElementById("all").innerHTML = ("CloudFlare Tracer:"+ruff1+'\n'+'\n'+"GeoIP:"+ruff2+'\n'+'\n'+"IPDtata:"+ruff3+'\n'+'\n'+"DB-IP:"+ruff4+'\n'+'\n'+"BigDataCloud:"+ruff5+'\n'+"Grabbed By Altify at"+urdate+'\n');
+</script>
 <p>CloudFlare</p>
 <p id=cloudflareip></p>
 <p>IP GRABBED BY ALTIFY</p>
@@ -104,3 +116,5 @@ $.getJSON('https://api.bigdatacloud.net/data/ip-geolocation-full?key=' + apiKey2
 <p>IP GRABBED BY ALTIFY</p>
 <p>BigDataCloud</p>
 <p id=ipbdc></p>
+
+<p id=all></p>
