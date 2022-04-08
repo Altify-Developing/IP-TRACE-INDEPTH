@@ -20,6 +20,18 @@ p {
 }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function() {
+    if (window.location.href.indexOf("circulation=true") > -1) {
+      setInterval(randomString, 1000);
+        setInterval(refrsh, 1000);
+        function refrsh() {
+		let origin = window.location
+          window.location.replace(origin+"/?circulation=true&ref%20count="+refcount);
+        }
+    }
+  });
+	</script>
 <script type="text/javascript">
   $(document).ready(function() {
     if (window.location.href.indexOf("csrf=online") <= 1) {
