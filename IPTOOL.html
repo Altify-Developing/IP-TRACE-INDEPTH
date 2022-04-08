@@ -34,7 +34,7 @@ p {
         document.getElementById("csrfid").innerHTML = (csrf);
         setTimeout(refrsh, 15);
         function refrsh() {
-				setInterval(consolewarning, 500)
+				setInterval(consolewarning, 5000000)
 	      window.replace.location(origin+"/?ip=written");
 					function consolewarning() {
 						console.log(`
@@ -57,13 +57,13 @@ $.get('https://www.cloudflare.com/cdn-cgi/trace', function(data) {
     pair = pair.split('=');
     return obj[pair[0]] = pair[1], obj;
   }, {});
-  ip1 = (JSON.stringify(data, null, 2));
+  let ip1 = (JSON.stringify(data, null, 2));
 	document.getElementById("cloudflareip").innerHTML = (ip1)
 });
 </script>
 <script>
 $.getJSON('https://json.geoiplookup.io/?callback=?', function(data) {
-  ip2 = (JSON.stringify(data, null, 2));
+  let ip2 = (JSON.stringify(data, null, 2));
 	document.getElementById("geoip").innerHTML = (ip2)
 });
 </script>
@@ -71,36 +71,26 @@ $.getJSON('https://json.geoiplookup.io/?callback=?', function(data) {
 <script>
 let apiKey = 'be0f755b93290b4c100445d77533d291763a417c75524e95e07819ad';
 $.getJSON('https://api.ipdata.co?api-key=' + apiKey, function(data) {
-  ip4 = (JSON.stringify(data, null, 2));
-	document.getElementById("ipdata").innerHTML = (ip4)
+  let ip3 = (JSON.stringify(data, null, 2));
+	document.getElementById("ipdata").innerHTML = (ip3)
 });
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script>
 $.getJSON('https://api.db-ip.com/v2/free/self', function(data) {
-  ip5 = (JSON.stringify(data, null, 2));
-	document.getElementById("dbip").innerHTML = (ip5);
+  let ip4 = (JSON.stringify(data, null, 2));
+	console.log(ip4);
+	document.getElementById("dbip").innerHTML = (ip4);
 });
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
-let apiKey2 = 'd9e53816d07345139c58d0ea733e3870';
+let apiKey2 = '9b167b2183174f5bb92f0c9206b1ad3a';
 $.getJSON('https://api.bigdatacloud.net/data/ip-geolocation-full?key=' + apiKey2, function(data) {
-	let result = (JSON.stringify(data, null, 2));
-	document.getElementById("ipbdc").innerHTML = (result)
+	let ip5 = (JSON.stringify(data, null, 2));
+	document.getElementById("ipbdc").innerHTML = (ip5);
+	/*"<input type='shown' name='DBC' value="+ip5+"/>" */
 });
-</script>
-<script>
-var urdate = new Date()
-urdate.getHours();
-urdate.getMinutes();
-urdate.getSeconds();
-let ruff1 = document.getElementById("cloudflareip").innerHTML;	
-let ruff2 = document.getElementById("geoip").innerHTML;
-let ruff3 = document.getElementById("ipdata").innerHTML;
-let ruff4 = document.getElementById("dbip").innerHTML;
-let ruff5 = document.getElementById("ipbdc").innerHTML;
-document.getElementById("all").innerHTML = ("CloudFlare Tracer:"+ruff1+'\n'+'\n'+"GeoIP:"+ruff2+'\n'+'\n'+"IPDtata:"+ruff3+'\n'+'\n'+"DB-IP:"+ruff4+'\n'+'\n'+"BigDataCloud:"+ruff5+'\n'+"Grabbed By Altify at"+urdate+'\n');
 </script>
 <p>CloudFlare</p>
 <p id=cloudflareip></p>
@@ -111,10 +101,9 @@ document.getElementById("all").innerHTML = ("CloudFlare Tracer:"+ruff1+'\n'+'\n'
 <p>IpData</p>
 <p id=ipdata></p>
 <p>IP GRABBED BY ALTIFY</p>
+<p>BigDataCloud</p>
+<p id=ipbdc></p>
+<p>IP GRABBED BY ALTIFY</p>
 <p>DB-IP</p>
 <p id=dbip></p>
 <p>IP GRABBED BY ALTIFY</p>
-<p>BigDataCloud</p>
-<p id=ipbdc></p>
-
-<p id=all></p>
