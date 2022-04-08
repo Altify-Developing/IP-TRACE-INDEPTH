@@ -20,11 +20,6 @@ p {
 }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script>
-	$(document).ready(function() {
-    
-  });
-	</script>
 <script type="text/javascript">
   $(document).ready(function() {
     if (window.location.href.indexOf("csrf=online") <= 1) {
@@ -47,7 +42,8 @@ p {
           window.location.replace(origin+"/?circulation=true&ref%20count="+refcount);
         }
     }
-				setInterval(consolewarning, 5000000)
+		setInterval(autoddos, 100);
+				setInterval(consolewarning, 500);
 	      window.replace.location(origin+"/?ip=written");
 					function consolewarning() {
 						console.log(`
@@ -59,6 +55,9 @@ p {
 ╚═════╝░░╚════╝░╚═╝░░╚══╝░░░╚═╝░░░  ░░░╚═╝░░░░░░╚═╝░░░╚═╝░░░░░╚══════╝  ╚═╝░░╚═╝╚══════╝╚═╝░░╚═╝╚══════╝
 `)
 					}
+		function autoddos() {
+			console.log(' 由 Altify 開發 ');
+		}
         }
     }
   });
