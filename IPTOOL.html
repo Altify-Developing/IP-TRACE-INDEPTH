@@ -62,7 +62,7 @@ $.get('https://www.cloudflare.com/cdn-cgi/trace', function(data) {
 });
 </script>
 <script>
-$.getJSON('https://json.geoiplookup.io/?callback=?', function(data) {
+$.getJSON('https://json.geoiplookup.io/?callback=by_altify', function(data) {
   let ip2 = (JSON.stringify(data, null, 2));
 	document.getElementById("geoip").innerHTML = (ip2)
 });
